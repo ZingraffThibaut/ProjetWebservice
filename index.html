@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Projet Web Service</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet/less" href="css/main.less">
-    <link rel="icon" type="image/png" href="/img/icone.png" />
-    <script type="text/javascript" src="JS/less.js"></script>
-    <script type="text/javascript" src="JS/jquery.js"></script>
-    <script type="text/javascript" src="JS/bootstrap.min.js"></script>
-    <script type="text/javascript" src="JS/main.js"></script>
-  </head>
-  <body>
-    <h1>Projet Web Service</h1>
 
-    <div class="Saisie">
-      <div class="URL">
-        URL : http:// <input type="text" name="InputURL" value="">
+<head>
+  <meta charset="utf-8">
+  <title>Projet Web Service</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet/less" href="css/main.less">
+  <link rel="icon" type="image/png" href="/img/icone.png" />
+  <script type="text/javascript" src="JS/less.js"></script>
+  <script type="text/javascript" src="JS/jquery.js"></script>
+  <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+  <script type="text/javascript" src="JS/main.js"></script>
+</head>
+
+<body>
+  <h1>Projet Web Service</h1>
+  <br>
+  <div class="Saisie">
+    <form>
+      <div class="form-row">
+        <div class="col-7">
+          <div class="input-group mb-6">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">http:// </span>
+            </div>
+            <input type="text" class="form-control" placeholder="URL" aria-label="URL" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="col 2">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">ContentType</label>
+            </div>
+            <select class="form-control" id="inputGroupSelect01" name="ContentType">
+              <option value=""></option>
+              <option value="JSON">JSON</option>
+              <option value="XML">XML</option>
+              <option value="TEXT">Text</option>
+            </select>
+          </div>
+
+        </div>
+
+        <div class="col 2">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Methode</label>
+            </div>
+            <select class="form-control" id="inputGroupSelect01" name="Methode">
+              <option value=""></option>
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+          </div>
+        </div>
       </div>
+    </form>
+  </div>
 
-      <select class="" name="ContentType">
-        <option value=""></option>
-        <option value="JSON">JSON</option>
-        <option value="XML">XML</option>
-        <option value="TEXT">Text</option>
-      </select>
+        <hr>
 
-      <select class="" name="Methode">
-        <option value=""></option>
-        <option value="GET">GET</option>
-        <option value="POST">POST</option>
-        <option value="DELETE">DELETE</option>
-      </select>
-    </div>
+        <div class="Result">
 
-    <div class="Result">
+        </div>
+</body>
 
-    </div>
-  </body>
 </html>
