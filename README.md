@@ -22,18 +22,19 @@ En   résumé   il   vous   est   demandé   de   reproduire   la   fenêtre
 Votre   interface   cliente   pourrait   en   théorie   fonctionner   en   indiquant   n’importe   quelle   url.
 
 Je   vous   demanderai   de   développer   pour   la   partie   serveur   plusieurs   webservices:
-    - le   webservice   article:
-        - un   article   est   composé   d’un   identifiant   généré   à   la   création,   d’un   libellé,   d’un   prix   et   de   l’identifiant d’une   catégorie
-        - le   webservice   GET   /articles   renverra   la   liste   des   articles,
-        - le   webservices   GET   /article/:id   renverra   un   article   en   particulier   (où   :id   est   l’identifiant   de   l’article),
-        - le   webservice   POST   /article   créera   un   article,
-        - le   webservice   DELETE   /article/:id   supprimera   un   article
-    - le   webservice   catégorie:
-        - une   catégorie   est   composée   d’un   identifiant   (généré   à   la   création),   et   d’un   libellé,
-        - le   webservice   GET   /categories   renverra   la   liste   des   catégories,
-        - le   webservices   GET   /catégorie/:id   renverra   une   catégorie   en   particulier   (où   :id   est   l’identifiant   de   la
+
+- le   webservice   article:
+    - un   article   est   composé   d’un   identifiant   généré   à   la   création,   d’un   libellé,   d’un   prix   et   de   l’identifiant d’une   catégorie
+    - le   webservice   GET   /articles   renverra   la   liste   des   articles,
+    - le   webservices   GET   /article/:id   renverra   un   article   en   particulier   (où   :id   est   l’identifiant   de   l’article),
+    - le   webservice   POST   /article   créera   un   article,
+    - le   webservice   DELETE   /article/:id   supprimera   un   article
+- le   webservice   catégorie:
+    - une   catégorie   est   composée   d’un   identifiant   (généré   à   la   création),   et   d’un   libellé,
+    - le   webservice   GET   /categories   renverra   la   liste   des   catégories,
+    - le   webservices   GET   /catégorie/:id   renverra   une   catégorie   en   particulier   (où   :id   est   l’identifiant   de   la
         catégorie),
-        - le   webservice   POST   /categorie   créera   une   catégorie,
-        - le   webservice   DELETE   /categorie/:id   supprimera   une   catégorie
-        
+    - le   webservice   POST   /categorie   créera   une   catégorie,
+    - le   webservice   DELETE   /categorie/:id   supprimera   une   catégorie
+
 Bien   entendu,   l’appel   à   un   webservice   inexistant   ou   avec   la   mauvaise   méthode   devra   renvoyer   le   code   http correspondant.
