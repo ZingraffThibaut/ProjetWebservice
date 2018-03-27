@@ -18,19 +18,21 @@
   <h1>Projet Web Service</h1>
   <br>
   <div class="Saisie">
-    <form>
+    <form action="traitement.php">
       <div class="form-row">
-        <div class="col-7">
-          <div class="input-group mb-6">
+        <div class="col-12">
+          <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">http:// </span>
+              <span class="input-group-text" id="basic-addon1">URL </span>
             </div>
             <input type="text" class="form-control" placeholder="URL" aria-label="URL" aria-describedby="basic-addon1">
           </div>
         </div>
-
-        <div class="col 2">
-          <div class="input-group mb-2">
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col 3">
+          <div class="input-group">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">ContentType</label>
             </div>
@@ -44,8 +46,8 @@
 
         </div>
 
-        <div class="col 2">
-          <div class="input-group mb-2">
+        <div class="col 3">
+          <div class="input-group">
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Methode</label>
             </div>
@@ -57,15 +59,37 @@
             </select>
           </div>
         </div>
+        <div class="col 3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">Langue</label>
+            </div>
+            <select class="form-control" id="inputGroupSelect01" name="Methode">
+              <option value=""></option>
+              <option value="Fr">FR</option>
+              <option value="En">EN</option>
+            </select>
+          </div>
+        </div>
+        <div class="col 3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+                <input type="text" class="form-control" placeholder="donnees" aria-label="donnees" aria-describedby="basic-addon1">
+            </div>
+          </div>
+        </div>
+        <div class="col 3" id="Valider">
+          <button class="btn btn-primary" type="submit">Valider</button>
+        </div>
       </div>
     </form>
   </div>
 
-        <hr>
+  <hr>
 
-        <div class="Result">
-
-        </div>
+  <div class="Result">
+    
+  </div>
 </body>
 
 </html>
