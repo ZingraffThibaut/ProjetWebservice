@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /XML/ProjetWebservice/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ serveur.php/$1 [L]

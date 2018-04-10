@@ -18,14 +18,13 @@
   <h1>Projet Web Service</h1>
   <br>
   <div class="Saisie">
-    <form action="traitement.php">
       <div class="form-row">
         <div class="col-12">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">URL </span>
             </div>
-            <input type="text" class="form-control" placeholder="URL" aria-label="URL" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" value="http://localhost:8888/XML/ProjetWebservice/" aria-label="URL" aria-describedby="basic-addon1" id="url">
           </div>
         </div>
       </div>
@@ -36,11 +35,9 @@
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">ContentType</label>
             </div>
-            <select class="form-control" id="inputGroupSelect01" name="ContentType">
-              <option value=""></option>
-              <option value="JSON">JSON</option>
+            <select class="form-control" name="ContentType" id="content">
               <option value="XML">XML</option>
-              <option value="TEXT">Text</option>
+              <option value="JSON">JSON</option>
             </select>
           </div>
 
@@ -51,8 +48,7 @@
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Methode</label>
             </div>
-            <select class="form-control" id="inputGroupSelect01" name="Methode">
-              <option value=""></option>
+            <select class="form-control" name="Methode" id="methode">
               <option value="GET">GET</option>
               <option value="POST">POST</option>
               <option value="DELETE">DELETE</option>
@@ -64,8 +60,7 @@
             <div class="input-group-prepend">
               <label class="input-group-text" for="inputGroupSelect01">Langue</label>
             </div>
-            <select class="form-control" id="inputGroupSelect01" name="Methode">
-              <option value=""></option>
+            <select class="form-control" name="Langue" id="langue">
               <option value="Fr">FR</option>
               <option value="En">EN</option>
             </select>
@@ -74,22 +69,21 @@
         <div class="col 3">
           <div class="input-group">
             <div class="input-group-prepend">
-                <input type="text" class="form-control" placeholder="donnees" aria-label="donnees" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="donnees" aria-label="donnees" aria-describedby="basic-addon1" id="donnee">
             </div>
           </div>
         </div>
         <div class="col 3" id="Valider">
-          <button class="btn btn-primary" type="submit">Valider</button>
+          <button class="btn btn-primary" id="valide">Valider</button>
         </div>
       </div>
-    </form>
   </div>
 
   <hr>
 
-  <div class="Result">
+  <textarea class="Result" id="Reponse">
     
-  </div>
+  </textarea>
 </body>
 
 </html>

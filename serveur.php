@@ -6,10 +6,12 @@ include("connexion.php");
 $urls = explode("/",$_SERVER['REQUEST_URI']);
 $methode = $_SERVER['REQUEST_METHOD'];
 
-switch ($urls[4]) {
+//{"id_article":"2","nom":"VTT","prix":"100","id_categ":"1"}
+
+switch ($urls[3]) {
   case 'article':
     if($methode=="GET"){
-      if(empty($urls[5])){
+      if(empty($urls[4])){
         $requete = "SELECT id_article FROM REST_Article ORDER BY id_article";
         $res = $dbh->query($requete);
         $err = $res->errorInfo();
@@ -19,7 +21,7 @@ switch ($urls[4]) {
           http_response_code(500);
         }
       }else{
-        $requete = "SELECT id_article, nom, prix, id_categ FROM REST_Article WHERE id_article=".$urls[5];
+        $requete = "SELECT id_article, nom, prix, id_categ FROM REST_Article WHERE id_article=".$urls[4];
         $res = $dbh->query($requete);
         $err = $res->errorInfo();
         if(empty($err[2])){
@@ -29,9 +31,9 @@ switch ($urls[4]) {
         }
       }
     }else if($methode=="POST"){
-      if($_POST["content"]=="XML"){
+      if($_POST["content"]=="application/xml"){
         $dom = new DOMDocument;
-        $dom->loadXML($_POST['data']);
+        $dom->loadXML($_POST['donnee']);
 
         $els = $dom->getElementsByTagName('nom');
         foreach ($els as $el) {
@@ -60,7 +62,7 @@ switch ($urls[4]) {
         }else{
           http_response_code(400);
         }
-      }else if($_POST["content"]=="JSON"){
+      }else if($_POST["content"]=="application/json"){
         $data = json_decode($_POST['donnee']);
         if(!empty($data->nom) && !empty($data->prix) &&!empty($data->id_categ)){
           $requete="INSERT INTO REST_Article VALUES(NULL, '$data->nom', $data->prix, $data->id_categ)";
@@ -78,8 +80,8 @@ switch ($urls[4]) {
         http_response_code(500);
       }
     }else if($methode=="DELETE"){
-      if(!empty($urls[5])){
-        $requete = "DELETE FROM REST_Article WHERE id_article=".$urls[5];
+      if(!empty($urls[4])){
+        $requete = "DELETE FROM REST_Article WHERE id_article=".$urls[4];
         $res = $dbh->query($requete);
         $err = $res->errorInfo();
         if(empty($err[2])){
@@ -96,7 +98,7 @@ switch ($urls[4]) {
   break;
   case 'categorie':
   if($methode=="GET"){
-    if(empty($urls[5])){
+    if(empty($urls[4])){
         $requete = "SELECT id_categ FROM REST_Categ ORDER BY id_categ";
         $res = $dbh->query($requete);
         $err = $res->errorInfo();
@@ -106,7 +108,7 @@ switch ($urls[4]) {
           http_response_code(500);
         }
       }else{
-        $requete = "SELECT id_categ, nom FROM REST_Categ WHERE id_categ=".$urls[5];
+        $requete = "SELECT id_categ, nom FROM REST_Categ WHERE id_categ=".$urls[4];
         $res = $dbh->query($requete);
         $err = $res->errorInfo();
         if(empty($err[2])){
@@ -116,9 +118,9 @@ switch ($urls[4]) {
         }
       }
   }else if($methode=="POST"){
-    if($_POST["content"]=="XML"){
+    if($_POST["content"]=="application/xml"){
       $dom = new DOMDocument;
-      $dom->loadXML($_POST['data']);
+      $dom->loadXML($_POST['donnee']);
 
       $els = $dom->getElementsByTagName('nom');
       foreach ($els as $el) {
@@ -137,7 +139,7 @@ switch ($urls[4]) {
       }else{
         http_response_code(400);
       }
-    }else if($_POST["content"]=="JSON"){
+    }else if($_POST["content"]=="application/json"){
       $data = json_decode($_POST['donnee']);
       if(!empty($data->nom)){
         $requete="INSERT INTO REST_Categ VALUES(NULL, '$data->nom')";
@@ -155,8 +157,8 @@ switch ($urls[4]) {
       http_response_code(500);
     }
   }else if($methode=="DELETE"){
-    if(!empty($urls[5])){
-      $requete = "DELETE FROM REST_Categ WHERE id_categ=".$urls[5];
+    if(!empty($urls[4])){
+      $requete = "DELETE FROM REST_Categ WHERE id_categ=".$urls[4];
       $res = $dbh->query($requete);
       $err = $res->errorInfo();
       if(empty($err[2])){
